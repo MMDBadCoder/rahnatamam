@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="colorlib.com">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {#semantic ui cdn#}
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+
+    <title>فعال سازی</title>
+
+
+    {% load static %}
+
+    <!-- Font Icon -->
+    <link rel="stylesheet"
+          href="{% static 'accounting/signup/colorlib-wizard-11/fonts/themify-icons/themify-icons.css' %}">
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'accounting/signup/colorlib-wizard-11/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+
+
+</head>
+<body>
+
+<div class="main">
+
+    <div class="container">
+        <h2>سامانه ثبت نام در اردو راه ناتمام</h2>
+
+        <form method="post" action="{% url 'activate' %}" id="login-form" class="signup-form wizard clearfix">
+
+            <div class="steps clearfix">
+                <ul role="tablist" style="justify-content: center;">
+                    <li role="tab" class="first last current" aria-disabled="false" aria-selected="true"><a
+                            id="signup-form-t-0" href="#signup-form-h-0" aria-controls="signup-form-p-0"><span
+                            class="current-info audible"> </span><span class="title">
+                <span class="icon"><i class="sign-in large icon"></i></span>
+                <span class="title_text" style="font-size: 20px">ورود</span>
+            </span></a></li>
+                </ul>
+            </div>
+
+
+            <div class="content clearfix">
+                <h3 id="signup-form-h-0" tabindex="-1" class="title current">
+                    <span class="icon"><i class="key large icon"></i></span>
+                    <span class="title_text">فعال سازی</span>
+                </h3>
+
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label for="email" class="form-label required">کد فعال سازی</label>
+                    <input type="number" name="code" id="code" class="error" aria-invalid="true" required>
+                </div>
+
+            </div>
+
+            <br>
+            <div style="width: 100%; justify-content: center;align-items: center;display: flex;">
+                <button type="submit" class="ui red inverted button"><p>&nbsp&nbsp&nbsp&nbspفعال
+                    سازی&nbsp&nbsp&nbsp&nbsp</p>
+                </button>
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+<div class="footer">
+
+</div>
+
+</body>
+</html>
+
+
+<script>
+    {% if error %}
+        async function error() {
+            Swal.fire({
+                icon: 'error',
+                title: 'خطا',
+                text: '{{ error }}',
+            });
+        }
+        error();
+    {% endif %}
+
+    {% if info %}
+        async function info() {
+            Swal.fire({
+                icon: 'info',
+                title: 'پیغام',
+                text: '{{ info }}',
+            });
+        }
+        info();
+    {% endif %}
+</script>

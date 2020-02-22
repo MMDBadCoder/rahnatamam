@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'samim';
+    src: local('Samim'),
+    url('../fonts/samim.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'tanha';
+    src: local('Tanha'),
+    url('../fonts/tanha.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'roya';
+    src: local('Roya'),
+    url('../fonts/roya.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'vazir';
+    src: local('Vazir'),
+    url('../fonts/vazir.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'yekan';
+    src: local('Yekan'),
+    url('../fonts/yekan.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'parastoo';
+    src: local('Parastoo'),
+    url('../fonts/parastoo.ttf') format("truetype");
+}
+
+
+body {
+    font-family: tanha;
+}
+
+h2 {
+    font-family: tanha;
+}
+
+label {
+    font-family: tanha;
+}
+
+span {
+    font-family: tanha
+}
